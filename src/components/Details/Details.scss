@@ -1,0 +1,264 @@
+@import "../../scss/var";
+@import "../../scss/mixin";
+
+.detailsPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    hr {
+        width: 100vw;
+        height: 0.5rem;
+        box-shadow: inset 0 0 2px black;
+        margin: 1rem auto;
+    }
+
+    .backdrop {
+        width: 100vw;
+        height: 50vh;
+        box-shadow: 0 0 2rem #191919;
+    }
+
+    .details {
+        margin-top: -13rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        & > a {
+            cursor: default;
+            height: 30rem;
+            box-shadow: 0 0 2rem #191919;
+            .poster {
+                max-width: 20rem;
+                min-height: 30rem;
+            }
+        }
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .runtime {
+                font-size: 2rem;
+            }
+            .name {
+                font-weight: bold;
+                font-size: 4.5rem;
+                text-align: center;
+            }
+            .genres {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-evenly;
+                .name {
+                    width: fit-content;
+                    font-size: 1.5rem;
+                    background-color: $rich-black;
+                    color: white;
+                    padding: 1rem 2rem;
+                    margin-top: 1rem;
+                    margin-right: 1.5rem;
+                }
+            }
+
+            .date {
+                font-size: 2.5rem;
+            }
+
+            .homepage {
+                font-size: 2rem;
+                margin: 1rem;
+                text-align: center;
+                a {
+                    color: black;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .overview {
+        width: 60%;
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .seasons {
+        width: 60%;
+        display: grid;
+        place-items: center;
+        margin: 1rem;
+
+        b {
+            font-size: 2.5rem;
+            text-decoration: underline;
+        }
+
+        .season {
+            width: 100%;
+            min-height: 25rem;
+            display: grid;
+            grid-template-columns: 0.1fr 1fr;
+            margin-bottom: 1rem;
+            a {
+                height: 25rem;
+                cursor: none;
+                .poster {
+                    max-width: 15rem;
+                    min-height: 25rem;
+                }
+            }
+            .s-details {
+                margin-left: 1rem;
+                .s-name {
+                    font-size: 2rem;
+                    font-weight: bold;
+                }
+                .s-overview {
+                    font-size: 1.7rem;
+                    text-align: justify;
+                }
+            }
+        }
+    }
+
+    .trailers {
+        b {
+            display: grid;
+            place-items: center;
+            font-size: 2.5rem;
+        }
+
+        .trailer {
+            font-size: 1.5rem;
+        }
+    }
+
+    .similar {
+        width: 70%;
+        font-size: 2.5rem;
+        .title {
+            @include gridCenter;
+            font-weight: bold;
+            a {
+                color: black;
+                text-decoration: underline;
+            }
+        }
+        .images {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .detailsPage {
+        .backdrop {
+            height: 57vh;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .detailsPage {
+        .backdrop {
+            height: 58vh;
+        }
+        .details {
+            section {
+                .name {
+                    font-size: 4rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .detailsPage {
+        .backdrop {
+            height: 60vh;
+        }
+        .details {
+            section {
+                .name {
+                    font-size: 3rem;
+                }
+                .homepage {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+        .overview {
+            width: 80%;
+        }
+        .seasons {
+            width: 80%;
+        }
+        .similar {
+            width: 80%;
+            .images {
+                .poster {
+                    max-width: 100px;
+                    min-height: 120px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .detailsPage {
+        .details {
+            section {
+                .date {
+                    font-size: 2rem;
+                }
+                .homepage {
+                    font-size: 1.4rem;
+                }
+            }
+        }
+        .seasons {
+            .season {
+                margin-top: 1rem;
+            }
+        }
+
+        .similar {
+            .images {
+                margin-top: 0.5rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 360px) {
+    .detailsPage {
+        .backdrop {
+            height: 62vh;
+        }
+        .details {
+            section {
+                .homepage {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+        .overview {
+            font-size: 1.5rem;
+        }
+        .seasons {
+            .season {
+                .s-details {
+                    .s-overview {
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+}

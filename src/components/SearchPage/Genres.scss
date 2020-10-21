@@ -1,0 +1,54 @@
+.genres {
+    .filter {
+        width: 30%;
+        display: flex;
+        justify-content: space-evenly;
+        margin: 2rem auto;
+        margin-bottom: 1rem;
+        button {
+            padding: 0.5rem 1.5rem;
+            background-color: black;
+            color: white;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+
+            &:active {
+                animation: move 1s ease;
+                cursor: pointer;
+            }
+        }
+
+        select {
+            padding: 0.5rem 1rem;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .genres {
+        .filter {
+            width: 40%;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .genres {
+        .filter {
+            width: 50%;
+        }
+    }
+}
+
+@media (max-width: 360px) {
+    .genres {
+        .commonImages{
+            margin-top: 0;
+        }
+        .filter {
+            width: 80%;
+            margin-top: 6rem;
+        }
+    }
+}

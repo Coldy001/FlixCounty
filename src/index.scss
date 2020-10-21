@@ -1,0 +1,44 @@
+@import "scss/_mixin";
+@import "scss/_var";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    display: grid;
+    place-items: center;
+    scroll-behavior: smooth;
+}
+
+ul.MuiPagination-ul {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+
+    li {
+        button {
+            font-size: 1.3rem;
+        }
+    }
+}
+
+a {
+    text-decoration: none;
+}

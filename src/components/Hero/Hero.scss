@@ -1,0 +1,47 @@
+@import "../../scss/_mixin";
+@import "../../scss/var";
+
+.hero {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 15px black;
+    .details {
+        @include gridCenter;
+        width: 80vw;
+        height: 60vh;
+        grid-template-areas:
+            "... poster ..."
+            "... title ..."
+            "... overview ...";
+        grid-template-columns: 15vw 70vw 15vw;
+        grid-template-rows: 1fr 0fr 0.5fr;
+        color: white;
+        a {
+            grid-area: poster;
+            .poster {
+                max-width: 200px;
+                min-height: 220px;
+            }
+        }
+        h1 {
+            grid-area: title;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+        .overview {
+            grid-area: overview;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: 360px) {
+    .hero {
+        .details {
+            width: 100vw;
+            height: 80vh;
+        }
+    }
+}

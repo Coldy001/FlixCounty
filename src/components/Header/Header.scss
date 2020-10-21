@@ -1,0 +1,153 @@
+@import "../../scss/_mixin";
+@import "../../scss/_var";
+
+header {
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 8rem;
+    background-color: $rich-black;
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.5);
+
+    display: grid;
+    place-items: center;
+    grid-template-areas: "name searchBar button";
+    grid-template-columns: repeat(3, 1fr);
+
+    .menuBtn {
+        display: none;
+    }
+
+    #menu {
+        display: none;
+    }
+
+    .name {
+        grid-area: name;
+        width: 100%;
+        font-size: 3rem;
+        @include gridCenter;
+    }
+
+    .searchBar {
+        grid-area: searchBar;
+        width: 90%;
+        height: inherit;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .rah-input-wrapper {
+            width: 100%;
+            height: 4rem;
+        }
+
+        #input {
+            width: 100%;
+            height: inherit;
+            padding: 1rem;
+            outline: none;
+            border: none;
+            background-color: white;
+        }
+
+        a {
+            height: 4rem;
+        }
+
+        .searchButton {
+            font-size: 4rem;
+            color: black;
+            background-color: white;
+        }
+    }
+
+    .buttons {
+        grid-area: button;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        font-size: 1.8rem;
+
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+
+    a {
+        color: white;
+    }
+}
+
+@media (max-width: 1024px) {
+    header {
+        grid-template-areas:
+            "name searchBar menuBtn"
+            "... ... button";
+        grid-template-columns: 1fr 1fr 15%;
+        grid-template-rows: 8rem 20rem;
+
+        .menuBtn {
+            grid-area: menuBtn;
+            display: block;
+            font-size: 4rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        #menu:checked + .buttons {
+            visibility: visible;
+            transform: rotateX(0deg);
+        }
+
+        .buttons {
+            visibility: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            background-color: $rich-black;
+            perspective: 200px;
+            perspective-origin: top;
+            transition: 0.5s;
+            transform-style: preserve-3d;
+            transform-origin: top;
+            transform: rotateX(90deg);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        grid-template-areas:
+            "name searchBar searchBar menuBtn"
+            "... ... button button";
+        grid-template-columns: 1fr 1fr 15% 15%;
+
+        .name {
+            font-size: 2.5rem;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    header {
+        height: 6rem;
+        grid-template-areas:
+            "name menuBtn"
+            "searchBar searchBar"
+            "button button";
+        grid-template-columns: 1fr 20%;
+        grid-template-rows: 6rem 4rem 20rem;
+
+        .searchBar {
+            height: 4rem;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.5);
+        }
+    }
+}
