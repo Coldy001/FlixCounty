@@ -7,16 +7,15 @@ function Footer() {
         <div className="footer" id="contactUs">
             <strong>Contact Us:</strong>
             <span>
-                <Facebook style={{ fontSize: "4.1rem" }} className="facebook" />
+                <Facebook className="facebook icon" />
                 <strong>Facebook</strong>
             </span>
             <span>
-                <Twitter style={{ fontSize: "4.1rem" }} className="twitter" />
+                <Twitter className="twitter icon" />
                 <strong>Twitter</strong>
             </span>
             <span>
-                {" "}
-                <Instagram style={{ fontSize: "4rem" }} className="instagram" />
+                <Instagram className="instagram icon" />
                 <strong>Instagram</strong>
             </span>
         </div>

@@ -106,7 +106,7 @@
                 cursor: none;
                 .poster {
                     max-width: 15rem;
-                    min-height: 25rem;
+                    min-height: 17rem;
                 }
             }
             .s-details {
@@ -215,16 +215,26 @@
         .details {
             section {
                 .date {
-                    font-size: 2rem;
+                    font-size: 1.5rem;
                 }
                 .homepage {
                     font-size: 1.4rem;
                 }
             }
         }
+        .overview{
+            font-size: 1.5rem;
+        }
         .seasons {
             .season {
-                margin-top: 1rem;
+                .s-details{
+                    .s-name{
+                        font-size: 1.5rem;
+                    }
+                    .s-overview{
+                        font-size: 1.2rem;
+                    }
+                }
             }
         }
 
@@ -243,6 +253,9 @@
         }
         .details {
             section {
+                .date{
+                    font-size: 1.5rem;
+                }
                 .homepage {
                     font-size: 1.2rem;
                 }
@@ -253,9 +266,20 @@
         }
         .seasons {
             .season {
+                min-height: fit-content;
+                a {
+                    height: 17rem;
+                    .poster {
+                        max-width: 10rem;
+                        min-height: 12rem;
+                    }
+                }
                 .s-details {
-                    .s-overview {
+                    .s-name{
                         font-size: 1.5rem;
+                    }
+                    .s-overview {
+                        font-size: 1.2rem;
                     }
                 }
             }
