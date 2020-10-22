@@ -1,4 +1,5 @@
 import React from "react";
+import './App.scss'
 
 import GenresPage from "./components/GenresPage";
 import DetailsPage from "./components/DetailsPage";

@@ -4,10 +4,14 @@
     background-color: #191919;
     font-size: 2rem;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
-    padding-left: 50rem;
-    padding-right: 50rem;
+
+    span{
+        display: flex;
+        align-items: center;
+    }
+
     strong {
         color: white;
     }

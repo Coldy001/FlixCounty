@@ -6,9 +6,19 @@ function Footer() {
     return (
         <div className="footer" id="contactUs">
             <strong>Contact Us:</strong>
-            <Facebook style={{ fontSize: "4.1rem" }} className="facebook" />
-            <Twitter style={{ fontSize: "4.1rem" }} className="twitter" />
-            <Instagram style={{ fontSize: "4rem" }} className="instagram" />
+            <span>
+                <Facebook style={{ fontSize: "4.1rem" }} className="facebook" />
+                <strong>Facebook</strong>
+            </span>
+            <span>
+                <Twitter style={{ fontSize: "4.1rem" }} className="twitter" />
+                <strong>Twitter</strong>
+            </span>
+            <span>
+                {" "}
+                <Instagram style={{ fontSize: "4rem" }} className="instagram" />
+                <strong>Instagram</strong>
+            </span>
         </div>
     );
 }
