@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import Images from "../Images/Images";
-import CircularProgress from "@material-ui/core/CircularProgress";
+// import CircularProgress from "@material-ui/core/CircularProgress";
 import { Link } from "react-router-dom";
 import "./Details.scss";
 
@@ -9,14 +9,9 @@ function Details({ details, similar, recomm, contentType, contentId }) {
         background: `#191919 url(https://image.tmdb.org/t/p/original${details?.backdrop_path}) center/cover no-repeat fixed`,
     };
 
-    console.log(similar);
-    console.log(recomm);
-
     return (
         <>
-            {details.length === 0 ? (
-                <CircularProgress />
-            ) : (
+            {details && (
                 <div className="detailsPage">
                     <div className="backdrop" style={customStyles}></div>
                     <div className="details">
@@ -28,10 +23,10 @@ function Details({ details, similar, recomm, contentType, contentId }) {
                                     details?.original_name ||
                                     details?.original_title}
                             </div>
-                            {details?.runtime !== undefined ? (
+                            {details?.runtime && (
                                 <Runtime runtime={details?.runtime} />
-                            ) : null}
-                            {details?.genres !== undefined ? (
+                            )}
+                            {details?.genres && (
                                 <ul className="genres">
                                     {details?.genres.map((x, i) => (
                                         <li key={i} className="name">
@@ -39,14 +34,13 @@ function Details({ details, similar, recomm, contentType, contentId }) {
                                         </li>
                                     ))}
                                 </ul>
-                            ) : null}
+                            )}
                             <div className="date">
                                 <b>Release Date:</b>{" "}
                                 {details?.release_date ||
                                     details?.first_air_date}
                             </div>
-                            {details?.production_companies ===
-                            undefined ? null : (
+                            {details?.production_companies && (
                                 <ul className="genres">
                                     {details?.production_companies.map(
                                         (x, i) => (
@@ -57,23 +51,23 @@ function Details({ details, similar, recomm, contentType, contentId }) {
                                     )}
                                 </ul>
                             )}
-                            {details?.homepage ? (
+                            {details?.homepage && (
                                 <div className="homepage">
                                     <a href={`${details?.homepage}`}>
                                         {details?.homepage}
                                     </a>
                                 </div>
-                            ) : null}
+                            )}
                         </section>
                     </div>
                     <div className="overview">{details?.overview}</div>
-                    {"seasons" in details ? (
+                    {"seasons" in details && (
                         <>
                             <hr />
                             <Seasons seasons={details?.seasons} />
                         </>
-                    ) : null}
-                    {similar.length === 0 ? null : (
+                    )}
+                    {similar && (
                         <>
                             <hr />
                             <div className="similar">
@@ -94,7 +88,7 @@ function Details({ details, similar, recomm, contentType, contentId }) {
                             </div>
                         </>
                     )}
-                    {recomm.length === 0 ? null : (
+                    {recomm && (
                         <>
                             <hr />
                             <div className="similar">

@@ -2,7 +2,7 @@ import React, { useEffect, useState, memo } from "react";
 import axios from "axios";
 import "./TvMovieRow.scss";
 import Images from "../Images/Images";
-import CircularProgress from "@material-ui/core/CircularProgress";
+// import CircularProgress from "@material-ui/core/CircularProgress";
 import Pagination from "@material-ui/lab/Pagination";
 import { MOVIE, TV } from "../../api/Links";
 
@@ -35,9 +35,7 @@ const TvMovieRow = ({ path }) => {
 
     return (
         <>
-            {data.length === 0 ? (
-                <CircularProgress />
-            ) : (
+            {data && (
                 <div className="tv-movie-row">
                     <span className="name">{cType.toUpperCase()}</span>
                     <select

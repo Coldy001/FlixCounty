@@ -73,7 +73,7 @@ function Genres() {
                 </select>
                 <button onClick={fetch}>Filter</button>
             </div>
-            {data !== undefined ? (
+            {data && (
                 <Common
                     data={data}
                     totalPages={totalPages}
@@ -81,7 +81,7 @@ function Genres() {
                     contentType={contentType}
                     handleChange={handleChange}
                 />
-            ) : null}
+            )}
         </div>
     );
 }
